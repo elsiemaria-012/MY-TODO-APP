@@ -4,12 +4,6 @@
     font-family: popins sans-serif;
 }
 
-.container {
-    width: 500px;
-    margin: 20px auto;
-    margin-top: -250px;
-}
-
 body {
     font-family: Arial, Helvetica, sans-serif;
     background-color: darkslategrey;
@@ -21,15 +15,12 @@ body {
     width: 100vw;
 }
 
-.todo-list{
-    width: 550px;
-    padding: 20px;
-    box-shadow: 0 10px 40px rgb(0, 0, 0, 0.1);
-    border-radius: 5px;
-    background-color: white;
-    
-    
+.container {
+    width: 500px;
+    margin: 20px auto;
+    margin-top: -250px;
 }
+
 .heading{
     text-align: center;
     color: chartreuse;  
@@ -39,8 +30,21 @@ body {
     font-family: Cambria, Cochin, Georgia, Times, 'Times New Roman', serif;
     font-style: oblique;
     font-size: 80px;
+    font-style: oblique;
+    font-size: 80px;
     
 }
+
+.todo-list{
+    width: 550px;
+    padding: 20px;
+    box-shadow: 0 10px 40px rgb(0, 0, 0, 0.1);
+    border-radius: 5px;
+    background-color: white;
+    
+    
+}
+
 #newtask {
     margin-top: 20px;
     background-color: #eee;
@@ -52,14 +56,14 @@ body {
 
 .input-bar {
     padding: 10px;
-    border: 1px solid;
+    border: 1px solid #eee;
     border-radius: 2px;
     outline: none;
     flex: 1;
     outline: none;
 }
 
-.addtoTask {  
+.addtoTask-btn {  
     background-color: blue;
     color: white;
     padding: 10px;
@@ -71,7 +75,7 @@ body {
     opacity: .6;
     
 }
-.addtoTask.active{  
+.addtoTask-btn.active{  
     opacity: 1;
     pointer-events: all;
 }
@@ -79,18 +83,24 @@ body {
 .tasks { 
     margin-top: 30px;
     width: 100%;
+    
 }
-.delete-btn {
-    padding: 12px;
-    text-align: center;
-    font-size: 14px;
-    color: white;
-    background-color: #f44336;
-    margin-top: 20px;
-    cursor: pointer;
-    border-radius: 4px;
-    width: 539px;
+.tasks div{ 
+ background-color: #eee;
+ padding: 6px;
+ border-radius: 6px;
+ margin-top: 4px;
+ justify-content: space-between;
+ cursor: pointer;
+ display: flex;
+ color: black;
+ font-weight: 500px;
+ font-family: Arial, Helvetica, sans-serif;
+ padding: 7px;
+
+ 
 }
+
 .itemBlock{
     padding: 10px;
     border-radius: 5px;
@@ -107,25 +117,31 @@ body {
     font-weight: 500px;
     color: #111;
     letter-spacing: 1px;
+    background-color: red;
+    padding: 10px;
+}
+
+.fa-sharp {
+    font-size: 20px;
+    color: rgb(8, 6, 113);
+    justify-content: space-between;
+    margin-top: 1px;
+    cursor: pointer;
+    padding: 2px;
+    
+}
+
+.fa-xmark {
+    font-size: 20px;
+    color: red;
+    gap: 2px;
+    margin-top: 1px;
+    cursor: pointer;
+    padding: 2px; 
+
 }
 
 .itemBlock.completed p{
     text-decoration: line-through;
     color: red;
-}
-
-.icon-btn   {
-    display: flex;
-    gap: 10px;
-    color: rgb(8, 6, 113);
-    font-size: 18px;  
-    align-items: center;
-}
-
-.icon-btni {
-    color: rgb(8, 6, 113);
-    font-size: 18px;
-    cursor: pointer;
- 
-   
 }

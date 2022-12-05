@@ -1,9 +1,12 @@
 
-//DEFINATIONS
+//DEFINATIONS 
 
 const input = document.querySelector('.input-bar');
-const addbutton = document.querySelector('.addtoTask');
+const addbutton = document.querySelector('.addtoTask-btn');
 const divtask = document.querySelector('.tasks');
+const tasksCollection = [];
+const completed = document.querySelector('.fa-sharp');
+const remove = document.querySelector('.fa-xmark');
 
 
 //ACTIVE AND DISABLE BUTTONS
@@ -20,33 +23,43 @@ input.addEventListener('keyup', ()=> {
 
 //ADDING / INPUTING TASKS
 
-document.querySelector('.addtoTask').onclick = function(){
+document.querySelector('.addtoTask-btn').onclick = function(){
     if (document.querySelector('#newtask input').value.length == 0){
         alert("Please Inpute a Task")
     }
     else{
+        tasksCollection.push(input.value)
         document.querySelector('.tasks').innerHTML +=
-        `<p>${input.value}</p>
-        <div class = "icon-btn">
+        `
+        <div class="icon-btn">
+        <p>${input.value}</p>
+        <div>
         <i class="fa-sharp fa-solid fa-pencil"></i>
-        <i class="fa-solid fa-xmark"></i>`
+        <i class="fa-solid fa-xmark"></i>
+        </div>
+        </div>
+        `;
+
+
+        //ADDING TO LOCAL STORAGE
+
+        window.localStorage.setItem("tasks", JSON.stringify(tasksCollection));
+        input.value = "";
     } 
-}
+};
 
-//DELETE ITEMS FROM LISTS
+       //COMPLETED
 
+       tasks.addEventListener('click', (e) => {
+           if (e.target.classList.contains('fa-solid fa-pencil')){
+        window.localStorage.removeItem('fa-solid fa-pencil');
+      }
+ });
 
-tasks.addEventListener('click', (e) => {
-    if (e.target.classList.contains('fa-xmark')){
-        e.target.parentElement.parentElement.remove();
-    }
-})
+      // DELETE ITEMS FROM LISTS
 
-//COMPLETED
-
-tasks.addEventListener('click', (e) => {
-    if (e.target.classList.contains('fa-solid fa-pencil')){
-        e.target.parentElement.parentElement.toggle(completed  );
-    }
-})
-
+        tasks.addEventListener('click', (e) => {
+            if (e.target.classList.contains('fa-xmark')){
+                window.localStorage.removeItem('fa-solid fa-pencil');
+   }
+});
